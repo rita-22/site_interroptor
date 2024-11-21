@@ -1,0 +1,59 @@
+/* Define altura e largura total do HTML e do body */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+/* Estiliza o corpo da página */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Centraliza e ajusta o contêiner */
+.container {
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilo da lâmpada */
+#lampada {
+    width: 20%; /* Responsivo: ocupa 20% da largura da tela */
+    max-width: 150px; /* Tamanho máximo */
+    height: auto;
+    margin-bottom: 20px;
+}
+
+/* Estilo do botão */
+.botao {
+    padding: 15px 30px; /* Tamanho do botão */
+    font-size: 18px;
+    color: #fff;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Efeito ao passar o mouse */
+.botao:hover {
+    background-color: #0056b3;
+    transform: scale(1.05); /* Aumenta o botão levemente */
+}
+
+/* Efeito ao clicar no botão */
+.botao:active {
+    background-color: #00408d;
+    transform: scale(0.95); /* Reduz o botão levemente */
+}
