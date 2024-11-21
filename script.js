@@ -1,18 +1,25 @@
-const lampada = document.getElementById('lampada');
-const interruptor = document.getElementById('interruptor');
+const body = document.body;
+const interruptor = document.getElementById("interruptor");
 
-let isLampadaAcesa = false;
+// Define estado inicial (apagada)
+let luzAcesa = false;
 
-interruptor.addEventListener('click', () => {
-    isLampadaAcesa = !isLampadaAcesa;
+// Adiciona evento ao botão
+interruptor.addEventListener("click", () => {
+    luzAcesa = !luzAcesa;
 
-    if (isLampadaAcesa) {
-        lampada.src = "https://via.placeholder.com/150/FFFF00/000000?text=Acesa";
-        lampada.alt = "Lâmpada acesa";
+    // Alterna entre as classes "acesa" e "apagada"
+    if (luzAcesa) {
+        body.classList.remove("apagada");
+        body.classList.add("acesa");
         interruptor.textContent = "Apagar";
     } else {
-        lampada.src = "https://via.placeholder.com/150/000000/FFFFFF?text=Apagada";
-        lampada.alt = "Lâmpada apagada";
+        body.classList.remove("acesa");
+        body.classList.add("apagada");
         interruptor.textContent = "Acender";
     }
 });
+
+// Define o estado inicial como "apagada"
+body.classList.add("apagada");
+

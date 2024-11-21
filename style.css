@@ -1,60 +1,49 @@
-/* Define altura e largura total do HTML e body */
+/* Configuração básica para o body */
 html, body {
     margin: 0;
     padding: 0;
     height: 100%;
     width: 100%;
-}
-
-/* Estiliza o corpo da página */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Garante que o body ocupe a altura total da tela */
+    overflow: hidden;
 }
 
-/* Centraliza e ajusta o contêiner */
-.container {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%; /* Garante que ocupe toda a largura */
-    height: 100%; /* Garante que ocupe toda a altura */
+/* Luz apagada (cor preta de fundo) */
+body.apagada {
+    background-color: #000000;
 }
 
-/* Estilo da lâmpada */
-#lampada {
-    width: 150px; /* Define um tamanho fixo para a lâmpada */
-    height: auto; /* Mantém a proporção da imagem */
-    margin-bottom: 20px;
+/* Luz acesa (cor amarela de fundo) */
+body.acesa {
+    background-color: #FFFF00;
 }
 
 /* Estilo do botão */
 .botao {
-    padding: 15px 30px; /* Define tamanho confortável para o botão */
-    font-size: 18px;
+    padding: 15px 30px;
+    font-size: 20px;
     color: #fff;
     background-color: #007BFF;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.2s;
+    position: relative;
+    z-index: 1; /* Garante que o botão esteja acima da luz */
 }
 
-/* Efeito ao passar o mouse */
+/* Efeito ao passar o mouse no botão */
 .botao:hover {
     background-color: #0056b3;
-    transform: scale(1.05); /* Aumenta o botão levemente */
+    transform: scale(1.05);
 }
 
 /* Efeito ao clicar no botão */
 .botao:active {
     background-color: #00408d;
-    transform: scale(0.95); /* Reduz o botão levemente */
+    transform: scale(0.95);
 }
+
 
