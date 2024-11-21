@@ -1,4 +1,4 @@
-/* Configuração básica para o body */
+/* Configuração básica */
 html, body {
     margin: 0;
     padding: 0;
@@ -10,14 +10,35 @@ html, body {
     overflow: hidden;
 }
 
-/* Luz apagada (cor preta de fundo) */
+/* Luz apagada */
 body.apagada {
     background-color: #000000;
 }
 
-/* Luz acesa (cor amarela de fundo) */
+/* Luz acesa */
 body.acesa {
-    background-color: #FFFF00;
+    background-color: #f2f29a;
+}
+
+/* Estilo do interruptor visual */
+#interruptor-visual {
+    width: 100px;
+    height: 200px;
+    background-image: url('https://i.postimg.cc/6QyTynzr/bulb-on.png'); /* Substitua pelo caminho da sua imagem */
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    transition: transform 0.3s;
+    margin-bottom: 20px;
+}
+
+/* Estado do interruptor visual ao ser "clicado" */
+body.acesa #interruptor-visual {
+    transform: translateY(10px); /* Move o interruptor para baixo */
+}
+
+body.apagada #interruptor-visual {
+    transform: translateY(0); /* Retorna ao estado inicial */
 }
 
 /* Estilo do botão */
@@ -31,6 +52,7 @@ body.acesa {
     cursor: pointer;
     transition: background-color 0.3s, transform 0.2s;
     position: relative;
+    top: 200px;
     z-index: 1; /* Garante que o botão esteja acima da luz */
 }
 
@@ -45,5 +67,3 @@ body.acesa {
     background-color: #00408d;
     transform: scale(0.95);
 }
-
-

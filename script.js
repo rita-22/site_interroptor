@@ -23,3 +23,6 @@ interruptor.addEventListener("click", () => {
 // Define o estado inicial como "apagada"
 body.classList.add("apagada");
 
+
+
+
