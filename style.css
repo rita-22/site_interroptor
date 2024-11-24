@@ -12,7 +12,7 @@ html, body {
 
 /* Luz apagada */
 body.apagada {
-    background-color: #000000;
+    background-color: black;
 }
 
 /* Luz acesa */
