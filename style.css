@@ -1,4 +1,4 @@
-/* Configuração básica */
+/* Configuração básica do site */
 html, body {
     margin: 0;
     padding: 0;
@@ -8,7 +8,7 @@ html, body {
     justify-content: center;
     align-items: center;
     overflow: hidden;
-}
+    transition: background-color 3s ease; /* Transição suave da cor de fundo */
 
 /* Luz apagada */
 body.apagada {
@@ -17,31 +17,35 @@ body.apagada {
 
 /* Luz acesa */
 body.acesa {
-    background-color: #f2f29a;
+    background-color: white;
 }
 
 /* Estilo do interruptor visual */
 #interruptor-visual {
-    width: 100px;
-    height: 200px;
-    background-image: url('https://i.postimg.cc/6QyTynzr/bulb-on.png'); /* Substitua pelo caminho da sua imagem */
+    width: 130px;
+    height: 220px;
     background-size: cover;
     background-position: center;
     position: absolute;
     transition: transform 0.3s;
     margin-bottom: 20px;
+    background-image: url('https://i.postimg.cc/6QyTynzr/bulb-on.png'); /* Imagem da lâmpada apagada */
 }
-
-/* Estado do interruptor visual ao ser "clicado" */
-body.acesa #interruptor-visual {
-    transform: translateY(10px); /* Move o interruptor para baixo */
-}
-
+/*lâmpada apagada */
 body.apagada #interruptor-visual {
-    transform: translateY(0); /* Retorna ao estado inicial */
+    background-image: url('https://i.postimg.cc/KjK1wL3c/bulb-off.png'); /* Imagem da lâmpada apagada */
 }
 
-/* Estilo do botão */
+/*Lâmpada acesa */
+body.acesa #interruptor-visual {
+    background-image: url('https://i.postimg.cc/6QyTynzr/bulb-on.png'); /* Imagem da lâmpada acesa */
+}
+/*Interruptor visual ao ser "clicado" */
+body.acesa #interruptor-visual {
+    transform: translateY(10px); /* interruptor de baixo da lâmpada */
+}
+
+/* Botão */
 .botao {
     padding: 15px 30px;
     font-size: 20px;
@@ -53,17 +57,5 @@ body.apagada #interruptor-visual {
     transition: background-color 0.3s, transform 0.2s;
     position: relative;
     top: 200px;
-    z-index: 1; /* Garante que o botão esteja acima da luz */
-}
-
-/* Efeito ao passar o mouse no botão */
-.botao:hover {
-    background-color: #0056b3;
-    transform: scale(1.05);
-}
-
-/* Efeito ao clicar no botão */
-.botao:active {
-    background-color: #00408d;
-    transform: scale(0.95);
+    z-index: 1; /* Faz com que o botão esteja acima da luz */
 }

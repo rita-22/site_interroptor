@@ -1,28 +1,24 @@
 const body = document.body;
 const interruptor = document.getElementById("interruptor");
 
-// Define estado inicial (apagada)
-let luzAcesa = false;
+// Determinar o estado inicial com base na classe do body
+let luzAcesa = body.classList.contains("acesa");
 
-// Adiciona evento ao botão
+// Configurar o texto inicial do botão
+interruptor.textContent = luzAcesa ? "Apagar" : "Acender";
+
+// Adicionar o evento de clique para alternar o estado da luz
 interruptor.addEventListener("click", () => {
-    luzAcesa = !luzAcesa;
+    luzAcesa = !luzAcesa; // Alterna o estado da luz
 
-    // Alterna entre as classes "acesa" e "apagada"
     if (luzAcesa) {
         body.classList.remove("apagada");
         body.classList.add("acesa");
-        interruptor.textContent = "Apagar";
+        interruptor.textContent = "Apagar"; // Atualiza o texto do botão
     } else {
         body.classList.remove("acesa");
         body.classList.add("apagada");
-        interruptor.textContent = "Acender";
+        interruptor.textContent = "Acender"; // Atualiza o texto do botão
     }
 });
-
-// Define o estado inicial como "apagada"
-body.classList.add("apagada");
-
-
-
 
